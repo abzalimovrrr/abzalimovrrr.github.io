@@ -1,0 +1,128 @@
+.group {
+  .other {
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-left: 2px solid #e4e4e4;
+
+    .title {
+      width: 100%;
+      padding: 15px 20px;
+      color: #3c3c3c;
+      font-size: 20px;
+      border-bottom: 2px solid #e4e4e4;
+    }
+
+    .union {
+      .slider {
+        height: 300px;
+        margin: 20px 20px 0;
+        overflow: hidden;
+        font-size: 50px;
+        text-align: center;
+        width: 300px;
+        background-color: #fff;
+        color: RoyalBlue;
+
+        .line {
+          display: flex;
+          background-color: Wheat;
+          width: 900px;
+          position: relative;
+          left: 0;
+          transition: all ease 1s;
+
+          &::after {
+            content: " ";
+            display: block;
+            clear: both;
+          }
+
+          .image {
+            float: left;
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+          }
+        }
+      }
+
+      .map {
+        width: 300px;
+        height: 300px;
+        margin: 0px 20px 0;
+        // font-size: 30px;
+        // color: #e4e4e4;
+      }
+    }
+
+    .contacts {
+      font-weight: 400;
+      color: #3c3c3c;
+      padding: 15px 20px 10px;
+
+      .contact {
+        .text {
+          font-size: 15px;
+          margin-bottom: 10px;
+        }
+
+        .social {
+          display: flex;
+
+          .link {
+            display: flex;
+            margin-right: 10px;
+            margin-bottom: 10px;
+
+            .image {
+              width: 40px;
+              height: 40px;
+              opacity: 0.5;
+              transition: all 100ms ease-in;
+
+              &:last-child {
+                margin-right: 0;
+              }
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .group {
+    .other {
+      width: 100vw;
+
+      .union {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+        .slider {
+          margin: 20px 10px 0;
+        }
+
+        .map {
+          margin: 20px 10px 0;
+        }
+      }
+
+      .contacts {
+        padding: 10px 0 0 10px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

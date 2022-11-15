@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+
+  overflow-y: scroll;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff21;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #f8dc3d;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: #f9cb1c;
+  }
+
+  &.scroll_color {
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+      background-color: #ffffff21;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #007acc;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+      background-color: #007ee0;
+    }
+  }
+
+  &.active {
+    overflow-y: hidden;
+  }
+
+  .general {
+    box-sizing: border-box;
+
+    #button_top {
+      display: flex;
+      background-color: #3d3d3d;
+      width: 60px;
+      height: 60px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50px;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
+
+      &::after {
+        content: "\f106";
+        font-family: FontAwesome;
+        font-size: 30px;
+        padding-bottom: 3px;
+        color: #fff;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: #333;
+      }
+
+      &.show {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .group {
+      width: 100%;
+      display: flex;
+
+      tbody {
+        vertical-align: baseline;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: #3c3c3c;
+
+    &:active {
+      color: #3c3c3c;
+    }
+
+    &:visited {
+      color: #3c3c3c;
+    }
+  }
+
+  button {
+    border: none;
+    outline: none;
+  }
+
+  ul li {
+    list-style: none;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .general {
+    .group {
+      flex-wrap: wrap;
+    }
+  }
+}

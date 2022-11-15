@@ -1,0 +1,129 @@
+.group {
+  .sidebar {
+    box-sizing: border-box;
+    max-width: 280px;
+    width: 100%;
+    border-right: 2px solid #e4e4e4;
+
+    .header {
+      width: 100%;
+      padding: 15px 20px;
+      color: #3c3c3c;
+      font-size: 20px;
+      border-bottom: 2px solid #e4e4e4;
+    }
+
+    .list {
+      padding: 16px 20px 0;
+      font-weight: 500;
+      overflow: scroll;
+      height: auto;
+      max-height: 850px;
+      overflow-x: hidden;
+      margin: 0;
+
+      scrollbar-width: thin;
+
+      &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background-color: #ffffff21;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #e4e4e4;
+      }
+
+      &::-webkit-scrollbar-thumb:active {
+        background-color: #c3c3c3;
+      }
+
+      ul,
+      li {
+        .hide::after {
+          content: url(../../images/sidebar/arrow.svg);
+          width: 100%;
+          height: 10px;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          margin-left: 4px;
+        }
+
+        // .show::after {
+        // }
+      }
+
+      span {
+        user-select: none;
+        cursor: pointer;
+        transition: all 120ms ease-in;
+
+        opacity: 1;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      .title {
+        .text {
+          margin-bottom: 16px;
+        }
+
+        .group_subtitle {
+          .subtitle {
+            .text {
+              margin-bottom: 12px;
+            }
+
+            .themes {
+              li {
+                margin-bottom: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .general {
+    .group {
+      .sidebar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 auto;
+        border-right: none;
+
+        .header {
+          user-select: none;
+          width: 100vw;
+          text-align: center;
+        }
+
+        .list {
+          padding: 0;
+          margin: auto;
+          visibility: hidden;
+          height: 0;
+          overflow: hidden;
+          opacity: 0;
+          transition: all 0.5s linear;
+
+          &.active {
+            padding: 10px;
+            visibility: visible;
+            height: auto;
+            overflow: scroll;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

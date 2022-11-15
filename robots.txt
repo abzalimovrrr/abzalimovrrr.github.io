@@ -1,0 +1,17 @@
+Host: http://f0647095.xsph.ru
+
+User-agent: Yandex
+Disallow: /BOOKS/
+
+Sitemap: http://f0647095.xsph.ru/sitemap/index.xml
+
+User-agent: Googlebot
+Disallow: /BOOKS/
+
+Sitemap: http://f0647095.xsph.ru/sitemap/index.xml
+
+
+User-agent: *
+Disallow: /BOOKS/
+
+Sitemap: http://f0647095.xsph.ru/sitemap/index.xml

@@ -1,0 +1,19 @@
+.copyright {
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 5px;
+
+  #hww {
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .copyright {
+    margin: 10px;
+  }
+}

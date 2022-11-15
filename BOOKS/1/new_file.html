@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+    <style>
+  body { background: url(https://cdns-images.dzcdn.net/images/artist/7a66231b65ed2a4040991bf5730c4826/500x500.jpg); }
+</style>
+  <head>
+    <meta charset="utf-8">
+    <title>Название документа</title>
+    <style>
+      #navbar ul{
+        display: none;
+        background-color: #f90;
+        position: absolute;
+        top: 100%;
+      }
+      #navbar li:hover ul { display: block; }
+      #navbar, #navbar ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      #navbar {
+        height: 30px;
+        background-color: #666;
+        padding-left: 25px;
+        min-width: 470px;
+      }
+      #navbar li {
+        float: left;
+        position: relative;
+        height: 100%;
+      }
+      #navbar li a {
+        display: block;
+        padding: 6px;
+        width: 100px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+      }
+      <style>
+		#calc {
+			width: 200px;
+			padding: 2px;
+			padding-bottom: 4px;
+			border: 1px solid #000;
+			font-size: 0;
+			margin: 0 auto;
+			position: relative;
+		}
+		#display {
+			display: block;
+			width: 185px;
+			height: 30px;
+			border: 1px solid #000;
+			margin: 0 auto;
+			margin: 4px;
+			text-align: right;
+			outline: 0;
+			background: #fff;
+			padding-right: 5px;
+		}
+		.button {
+			width: 40px;
+			height: 30px;
+			line-height: 30px;
+			display: inline-block;
+			cursor: pointer;
+			border: 1px solid #000;
+			margin: 4px;
+			font-size: 16px;
+			text-align: center;
+			transition: background .1s,
+			color .1s;
+		}
+		.button:hover {
+			background: #000;
+			color: #fff;
+		}
+		.button_C {
+			position: absolute;
+			left: 8px;
+			top: 8px;
+			width: 20px;
+			height: 20px;
+			font-size: 12px;
+			line-height: 20px;
+		}
+	
+      #navbar ul li { float: none; }
+      #navbar li:hover { background-color: #f90; }
+      #navbar ul li:hover { background-color: #666; }
+    </style>
+  </head>
+ 
+  <body>
+  
+    <ul id="navbar">
+      <li><a href="https://www.n96898nz.beget.tech/">Главная</a></li>
+      <li><a href="">Новости</a></li>
+      <li><a href="#">Контакты</a>
+        <ul>
+          <li><a href="#">Адрес</a></li>
+          <li><a href="#">Телефон</a></li>
+          <li><a href="#">Email</a></li>
+        </ul>
+      </li>
+      <li><a href="#">О нас</a></li>
+      <li><a href="#">Учебник</a>
+      <ul>
+          <li><a href="https://www.wm-school.ru/">WMSchool</a></li>
+          <li><a href="#">Book</a></li>
+          <li><a href="#">Book2</a></li>
+        </li>
+        </ul>
+         <li><a href="#">JS</a>
+          <ul>
+          <li><a href="ind.html">Работы по JS</a></li>
+          
+          <li><a href="#">#</a></li>
+          <li><a href="#">#</a></li>
+        </li>
+        </ul>
+         <li><a href="new_file.html">CSS</a></li>
+    </ul>
+    <style>
+		#calc {
+		    background-color: white;
+		    color: white;
+			width: 200px;
+			padding: 2px;
+			padding-bottom: 4px;
+			border: 1px solid #000;
+			font-size: 0;
+			margin: 0 auto;
+			position: relative;
+		}
+		#display {
+		    background-color: blue;
+			display: block;
+			width: 185px;
+			height: 30px;
+			border: 1px solid #000;
+			margin: 0 auto;
+			margin: 4px;
+			text-align: right;
+			outline: 0;
+			background: #fff;
+			padding-right: 5px;
+		}
+		.button {
+		    background-color: red;
+			width: 40px;
+			height: 30px;
+			line-height: 30px;
+			display: inline-block;
+			cursor: pointer;
+			border: 1px solid #000;
+			margin: 3px;
+			font-size: 16px;
+			text-align: center;
+			transition: background .1s,
+			color .1s;
+		}
+		.button:hover {
+		    color:pink;
+		    
+			background: #000;
+			color: white;
+		}
+		.button_C {
+		    background-color: green;
+			position: absolute;
+			left: 8px;
+			top: 8px;
+			width: 20px;
+			height: 20px;
+			font-size: 12px;
+			line-height: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="calc">
+		<input type="text" id="display" disabled>
+		<div class="button button_C" title="Очистить" data-type="C">C</div>
+		<div class="button" data-type="7">7</div>
+		<div class="button" data-type="8">8</div>
+		<div class="button" data-type="9">9</div>
+		<div class="button" data-type="/">&divide;</div>
+		<div class="button" data-type="4">4</div>
+		<div class="button" data-type="5">5</div>
+		<div class="button" data-type="6">6</div>
+		<div class="button" data-type="*">&times;</div>
+		<div class="button" data-type="1">1</div>
+		<div class="button" data-type="2">2</div>
+		<div class="button" data-type="3">3</div>
+		<div class="button" data-type="-">-</div>
+		<div class="button" data-type="0">0</div>
+		<div class="button" data-type=".">.</div>
+		<div class="button" data-type="=">=</div>
+		<div class="button" data-type="+">+</div>
+	</div> 
+	<script>
+		var calc = document.getElementById('calc');
+		var buttons = calc.getElementsByClassName('button');
+		var display = document.getElementById('display');
+		var str = '';
+		for (var i = 0; i < buttons.length; i++) {
+			addEvent(buttons[i]);               
+		}
+		function addEvent(button) {
+			button.addEventListener('click', event);
+			function event() {
+				var type = button.getAttribute('data-type');  
+				if (type === '=') {
+					str = eval(str);
+					display.value = str;
+					return;
+				} else if (type === 'C') {
+					str = '';
+				} else {
+					str += type;
+				}
+				display.value = str;
+			}
+		}
+	</script>
+	<style>
+		#game {
+		    background-color: green;
+			width: 156px;
+			border: 1px solid #000;
+			margin: 0 auto;
+			font-size: 0;
+		}
+		.cell {
+		    background-color: blue;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			font-family: arial;
+			display: inline-block;
+			font-size: 26px;
+			border: 1px solid #000;
+			cursor: pointer;
+			vertical-align: middle;
+			transition: background .1s;
+		}
+		.cell:hover {
+		   
+			background: red;
+		}
+		#message {
+			text-align: center
+		}
+		#restart {
+			margin: 0 auto;
+			display: block;
+		}
+		#statistics {
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			border: 1px solid;
+			padding: 0 20px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div id="game">
+		<div class="cell" data-id="0"></div>
+		<div class="cell" data-id="1"></div>
+		<div class="cell" data-id="2"></div>
+		<div class="cell" data-id="3"></div>
+		<div class="cell" data-id="4"></div>
+		<div class="cell" data-id="5"></div>
+		<div class="cell" data-id="6"></div>
+		<div class="cell" data-id="7"></div>
+		<div class="cell" data-id="8"></div>
+	</div> 
+	<p id="message">
+		Ходит: x
+	</p>
+	<input type="button" id="restart" value="Начать сначала">
+	<div id="statistics">
+		<p>
+			Выиграл-Молодец <b>x</b>: <span id="win_x">0</span>
+		</p>
+		<p>
+			Выиграл-Красаучег <b>0</b>: <span id="win_0">0</span>
+		</p>
+		<p>
+			Ничья-Лохи: <span id="win_draw">0</span>
+		</p>
+	</div>
+	<script>
+		var game = document.getElementById('game');
+		var message = document.getElementById('message');
+		var restart = document.getElementById('restart');
+		var win_x = document.getElementById('win_x');
+		var win_0 = document.getElementById('win_0');
+		var win_draw = document.getElementById('win_draw');
+		var cells = document.getElementsByClassName('cell');
+		var player = 'x';
+		var paused = false;
+		var data = []; //Здесь будут хратися отмеченые ячейки
+		win = {x: 0, '0': 0, draw: 0};
+		var stepCount = 0;
+		var winIndex = [
+			[0, 1, 2], 
+			[3, 4, 5], 
+			[6, 7, 8], 
+			[0, 3, 6], 
+			[1, 4, 7], 
+			[2, 5, 8], 
+			[0, 4, 8], 
+			[2, 4, 6]
+		];
+		for (var i = 0; i < cells.length; i++) {
+			addEvent(cells[i]);
+		}
+		restart.addEventListener('click', gameRestart);
+		function addEvent(cell) {
+			cell.addEventListener('click', step);
+			function step() {
+				if (!cell.innerHTML && !paused) {
+					cell.innerHTML = player;
+					var id = cell.getAttribute('data-id');
+					data[id] = player;
+					stepCount++;
+					if (checkWin()) {
+						message.innerHTML = 'Выиграл: ' + player;
+						win[player]++;
+						stepCount = 0;
+						paused = true;
+					} else {
+						changePlayer();
+					}
+					if (stepCount >= 9) {
+						win.draw++;
+						stepCount = 0;
+						message.innerHTML = 'Ничья';
+					}
+					updateStatistics();
+				}	
+			}
+		}
+		function checkWin() {
+			for (var i = 0; i < winIndex.length; i++) {
+				var id = winIndex[i];
+				var check = data[id[0]] &&
+					data[id[0]] == data[id[1]] && 
+					data[id[1]] == data[id[2]];
+				if (check) {
+					return true;
+				}
+			}
+			return false;
+		}
+		function changePlayer() {
+			if (player === 'x') {
+				player = '0';
+			} else {
+				player = 'x';
+			}
+			message.innerHTML = 'Ходит: ' + player;
+		}
+		function clear() {
+			for (var i = 0; i < cells.length; i++) {
+				cells[i].innerHTML = '';
+			}
+		}
+		function gameRestart() {
+			clear();
+			changePlayer();
+			data = [];
+			paused = false;
+		}
+		function updateStatistics() {
+			win_x.innerHTML = win.x; 
+			win_0.innerHTML = win['0']; 
+			win_draw.innerHTML = win.draw; 
+		}
+	</script>
+	
+			<ul>
+				<li><label><input type="radio" name="question1" data-true>Нет.</label></li>
+				<li><label><input type="radio" name="question1">Да.</label></li>
+				<li><label><input type="radio" name="question1">Когда как</label></li>
+			</ul>
+		</li>
+		<li class="question">
+			Сколько параментров можно передавать в фукнцию?
+			<ul>
+				<li><label><input type="radio" name="question2">Только столько, сколько указано при ее созданиию</label></li>
+				<li><label><input type="radio" name="question2">Минимум 1.</label></li>
+				<li><label><input type="radio" name="question2" data-true>Сколько угодно.</label></li>
+			</ul>
+		</li>
+		<li class="question">
+			Что такое: "use strict"?
+			<ul>
+				<li><label><input type="radio" name="question3">Просто строка</label></li>
+				<li><label><input type="radio" name="question3">Фукцния</label></li>
+				<li><label><input type="radio" name="question3" data-true>Строгий режим</label></li>
+			</ul>
+		</li>
+	</ul>
+	<input type="button" id="check" value="Проверить">	
+	<script>
+		var checkEl = document.getElementById('check');
+		var questionsEl = document.getElementsByClassName('question');
+		var result = [];
+		checkEl.addEventListener('click', checkAnswers);
+		function checkAnswers() {
+			for (var i = 0; i < questionsEl.length; i++) {
+				var answers = questionsEl[i].querySelectorAll('input[type=radio]');
+				result.push( checkOneAnswer(answers) );
+			}
+			printResult();
+			result = [];
+		}
+		function checkOneAnswer(answers) {
+			var result = null;
+			var noAnswer = true;
+			for (var i = 0; i < answers.length; i++) {
+				var isTrue = (answers[i].getAttribute('data-true') !== null);
+				if (answers[i].checked) {
+					noAnswer = false;
+					if (isTrue) {
+						result = true;
+					} else {
+						result = false;
+					}
+				} else {
+					if (isTrue) {
+						result = false;
+					}
+				}
+			}
+			if (noAnswer) {
+				result = null;
+			}
+			return result;
+		}
+		function printResult() {
+			var trueAnswers = 0;
+			var falseAnswers = 0;
+			var noAnswers = 0;
+			for (var i = 0; i < result.length; i++) {
+				if (result[i] === true) {
+					trueAnswers++;
+				} else if (result[i] === false) {
+					falseAnswers++;
+				} else if (result[i] === null) {
+					noAnswers++;
+				}
+			}
+			var all = trueAnswers + falseAnswers + noAnswers;
+			var percent = Math.round((trueAnswers/all) * 100);
+			var msg = 'Правильных ответов: ' + trueAnswers + ' (' + percent + '%)\n'
+				+ 'Неправильных ответов: ' + falseAnswers + '\n'
+				+ 'Без ответов: ' + noAnswers + '\n';
+			alert(msg);
+		}
+	</script>
+          
+</html>
+    

@@ -1,0 +1,115 @@
+html {
+    min-height: 100%;
+    position: relative;
+    background: linear-gradient(to bottom right,SpringGreen, YellowGreen	);
+    background-attachment: fixed;
+}
+H2 { text-align: center }
+
+body {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    /* margin: auto; */
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: medium;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+
+}
+.didid{
+    display: block;
+    display: grid;
+    grid-template-columns: 1000px;
+
+}
+
+.didi {
+    list-style: none; /* Отключение отображения маркеров. */
+   /* float: right;*/
+   display: block;
+   display: grid;
+   grid-template-columns: 300px 300px 300px;
+   gap: 10px;
+    width: 150px;  /* Ширина меню. */
+
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: blue;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+summary {
+    outline: 0px;
+    padding: 10px;
+}
+
+.header {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.wrapper__content {
+    position: absolute;
+    /* top: 50%; */
+    left: 50%;
+    z-index: 1;
+
+    transform: translate3d(-50%, 0, 0);
+    margin-top: 50px;
+}
+
+.content__subject {
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 15px;
+		box-shadow: 0px 1px 3px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: PaleGoldenrod	;
+}
+
+.content__subject:last-child {
+    margin-bottom: 30px;
+}
+
+.content__files {
+    border-top: 1px solid black;
+}
+
+@media (max-width: 840px) {
+    body {
+        font-size: xx-large;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 520px) {
+    body {
+        font-size: xx-large;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        font-size: 20px;
+        font-weight: bold;
+    }
+}

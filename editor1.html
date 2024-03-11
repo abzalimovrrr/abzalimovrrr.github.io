@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Editor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        #editor-container,
+        #result-container {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+
+        #editor-container {
+            /* padding: 30px; */
+            padding-left: 200;
+            border-right: 1px solid #ccc;
+            position: relative;
+            height: fit-content;
+        }
+
+        #code-editor {
+            width: calc(100% - 30px);
+            height: 70vh;
+            border: none;
+            /* padding: 20cqi; */
+            box-sizing: border-box;
+            font-family: monospace;
+            line-height: 1.5;
+            resize: none; /* Отключаем изменение размеров textarea */
+            margin-left: 10px;
+        }
+
+        .line-numbers {
+            counter-reset: line;
+            top: 150;
+            left: 0;
+            width: 30px;
+            background-color: #f5f5f5;
+            border-right: 1px solid #ccc;
+            box-sizing: border-box;
+            /* overflow: hidden; */
+            min-height: 70vh;
+            resize: none;
+        }
+
+        .line-numbers > span {
+            counter-increment: line;
+            display: block;
+            /* margin-bottom: 3px; */
+            margin-right: auto;
+            text-align: right;
+            padding-right: 5px;
+            resize: none;
+        }
+
+        .line-numbers > span:before {
+            content: counter(line);
+            display: inline-block;
+            width: 100%;
+            font-family: monospace;
+            line-height: 1.5;
+            resize: none;
+        }
+
+        #result-frame {
+            width: 100%;
+            height: 70vh;
+            border: 1px solid #ccc;
+        }
+
+        #execute-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transform: translateY();
+        }
+
+        .line-numbers-wrap {
+            position: absolute;
+            left: 0;
+            overflow: hidden;
+            height: fit-content;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="editor-container">
+        <div class="line-numbers-wrap" style="overflow: hidden; height: fit-content;">
+            <div class="line-numbers" id="line-numbers">
+            </br>
+                <div id="line-numbers-container"></div>
+                <!-- Сюда будут добавляться номера строк -->
+            </div>
+        </div>
+        <textarea id="code-editor"></textarea>
+    </div>
+
+    <div id="result-container">
+        <iframe id="result-frame"></iframe>
+        <button id="execute-btn">Выполнить</button>
+    </div>
+
+    <script>
+        document.getElementById('execute-btn').addEventListener('click', function() {
+            var code = document.getElementById('code-editor').value;
+            document.getElementById('result-frame').srcdoc = code;
+        });
+
+        var editor = document.getElementById('code-editor');
+        var lineNumbers = document.getElementById('line-numbers');
+
+        editor.addEventListener('input', function() {
+            // Обновляем номера строк при изменении содержимого редактора
+            updateLineNumbers();
+        });
+
+        // Инициализация номеров строк
+        updateLineNumbers();
+
+        function updateLineNumbers() {
+            // Очищаем текущие номера строк перед добавлением новых
+            lineNumbers.innerHTML = '';
+
+            // Получаем количество строк в редакторе
+            var linesCount = editor.value.split('\n').length;
+
+            // Добавляем номера строк в полосу нумерации
+            for (var i = 1; i <= linesCount; i++) {
+                var lineNumber = document.createElement('span');
+                // lineNumber.textContent = i;
+                lineNumbers.appendChild(lineNumber);
+            }
+            lineNumbers.offsetHeight = editor.offsetHeight;
+        }
+
+
+        //Меняем скрол 
+        editor.addEventListener("scroll", (e)=>{
+            console.log("SCroll:" + editor.scrollTop);
+            lineNumbers.style.transform = `translateY(${-1 * editor.scrollTop}px)`;
+        });
+    </script>
+
+</body>
+</html>

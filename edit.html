@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Editor</title>
+    <link rel="stylesheet" href="codemirror.min.css">
+    <link rel="stylesheet" href="material-darker.min.css">
+    <link rel="stylesheet" href="style7.css">
+</head>
+<body>
+    <div class="qw">
+        <div id="editor-container">
+            <textarea id="code-editor" class="CodeMirror"></textarea>
+        </div>
+    </div>
+
+    <div class="qw">
+        <div id="result-container">
+            <iframe id="result-frame"></iframe>
+            <div id="console-container"></div>
+
+
+
+
+<!-- <div class="zaz"> -->
+            <button id="execute-btn" class="button">
+                <svg width="31" height="44" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 13H22M22 13L7 2M22 13L7 24.5" stroke="black" stroke-width="4"/>
+                </svg>
+            </button>
+
+            <button id="run-js-btn" class="button">
+                <svg width="31" height="44" viewBox="0 0 22 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.25 9.25L13.2195 9.21951L14 8L13.25 9.25Z" fill="#D9D9D9"/>
+                    <path d="M17.5 2L15.5 4L16.5 6L18.5 4L17.5 2Z" fill="#D9D9D9"/>
+                    <path d="M3.5 11.5L7.5 8H12L17.5 13.5H21.5M14 26.5V19.5L9.5 15.5L14 8L6 20.5H0M15.5 4L17.5 2L18.5 4L16.5 6L15.5 4Z" stroke="black" stroke-width="4" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <button id="clear-console-btn" class="button">Clear Console</button>
+            <button id="clear-editor-btn" class="button">Clear Editor</button>
+            <button id="copy-editor-btn" class="button">Copy to Clipboard</button>
+      
+        <!-- </div> -->
+      
+      
+        </div>
+    </div>
+
+    <script src="codemirror.min.js"></script>
+    <script src="xml.min.js"></script>
+    <script src="javascript.min.js"></script>
+    <script src="css.min.js"></script>
+    <script src="htmlmixed.min.js"></script>
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
+            mode: 'htmlmixed',
+            lineNumbers: true,
+            theme: 'material-darker'
+        });
+
+        document.getElementById('execute-btn').addEventListener('click', function () {
+            var code = editor.getValue();
+            document.getElementById('result-frame').srcdoc = code;
+        });
+
+        document.getElementById('run-js-btn').addEventListener('click', function () {
+            var code = editor.getSelection();
+            var consoleContainer = document.getElementById('console-container');
+            consoleContainer.innerHTML = '';  // Clear previous console output
+
+            function captureConsole(logFn, type) {
+                return function() {
+                    var message = Array.from(arguments).join(' ');
+                    var div = document.createElement('div');
+                    div.textContent = type.toUpperCase() + ': ' + message;
+                    div.style.color = type === 'error' ? 'red' : 'white';
+                    consoleContainer.appendChild(div);
+                    logFn.apply(console, arguments);
+                }
+            }
+
+            console.oldLog = console.log;
+            console.oldError = console.error;
+            console.log = captureConsole(console.log, 'log');
+            console.error = captureConsole(console.error, 'error');
+
+            try {
+                eval(code);
+            } catch (err) {
+                console.error(err);
+            }
+
+            console.log = console.oldLog;
+            console.error = console.oldError;
+        });
+
+        document.getElementById('clear-console-btn').addEventListener('click', function () {
+            document.getElementById('console-container').innerHTML = '';
+        });
+
+        document.getElementById('clear-editor-btn').addEventListener('click', function () {
+            editor.setValue('');
+        });
+
+        document.getElementById('copy-editor-btn').addEventListener('click', function () {
+            var code = editor.getValue();
+            navigator.clipboard.writeText(code).then(function() {
+                alert('Code copied to clipboard!');
+            }, function() {
+                alert('Failed to copy code to clipboard.');
+            });
+        });
+    </script>
+</body>
+</html>
